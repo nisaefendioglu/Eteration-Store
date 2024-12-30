@@ -7,6 +7,8 @@ cart management, and favorite product features.
 
 ## Screens
 
+<img width="2480" alt="eteration" src="https://github.com/user-attachments/assets/e8816b74-5cb0-4ff0-b9e9-9e6c5b3b6608" />
+
 
 ## 🚀 Key Features
 
