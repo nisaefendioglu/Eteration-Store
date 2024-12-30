@@ -1,0 +1,52 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.EterationStore" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/blue</item>
+    </style>
+
+    <style name="Theme.EterationStore" parent="Base.Theme.EterationStore" />
+
+    <!-- Bottom Navigation Active Indicator Theme -->
+    <style name="Theme.BottomNavigationView.Active" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/blue</item>
+    </style>
+
+    <!-- Search Bar Style -->
+    <style name="Theme.SearchBar" parent="Theme.AppCompat.Light">
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:hint">Search</item>
+        <item name="android:drawableStart">@drawable/search_icon</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:inputType">textCapSentences</item>
+        <item name="android:textColorHint">@color/darkGrey</item>
+        <item name="android:background">@drawable/search_bar_background</item>
+        <item name="android:drawablePadding">@dimen/_4sdp</item>
+        <item name="maxLines">1</item>
+    </style>
+
+    <!-- Toolbar Title Text Appearance (Large) -->
+    <style name="Theme.Toolbar.BigTitle" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="fontFamily">@font/montserrat_bold</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!-- Toolbar Title Text Appearance (Small) -->
+    <style name="Theme.Toolbar.SmallTitle" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="fontFamily">@font/montserrat</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <!-- RadioButton Style -->
+    <style name="Theme.RadioButton" parent="Theme.AppCompat.Light">
+        <item name="colorAccent">@color/blue</item>
+        <item name="buttonTint">@color/blue</item>
+        <item name="fontFamily">@font/montserrat</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColorSecondary">@color/black</item>
+        <item name="colorControlNormal">@color/blue</item>
+    </style>
+</resources>

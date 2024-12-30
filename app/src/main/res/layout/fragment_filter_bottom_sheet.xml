@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true"
+        app:layout_constraintBottom_toTopOf="@+id/filter_primary_button"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/filter_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:navigationIcon="@drawable/close_button"
+                app:title="@string/filter"
+                app:titleCentered="true"
+                app:titleTextAppearance="@style/Theme.Toolbar.SmallTitle"
+                app:titleTextColor="@color/black" />
+
+            <TextView
+                android:id="@+id/filter_sort_by_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:fontFamily="@font/montserrat_light"
+                android:text="@string/sort_by"
+                android:textSize="@dimen/textSizeExtraSmall"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/filter_toolbar" />
+
+            <RadioGroup
+                android:id="@+id/filter_radio_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/filter_sort_by_text"
+                app:layout_constraintTop_toBottomOf="@+id/filter_sort_by_text">
+
+                <RadioButton
+                    android:id="@+id/filter_old_to_new"
+                    style="@style/Theme.RadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/old_to_new" />
+
+                <RadioButton
+                    android:id="@+id/filter_new_to_old"
+                    style="@style/Theme.RadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/new_to_old" />
+
+                <RadioButton
+                    android:id="@+id/filter_price_low_to_high"
+                    style="@style/Theme.RadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/price_low_to_high" />
+
+                <RadioButton
+                    android:id="@+id/filter_price_high_to_low"
+                    style="@style/Theme.RadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/price_high_to_low" />
+            </RadioGroup>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/materialDivider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/filter_radio_group" />
+
+            <TextView
+                android:id="@+id/filter_brand_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:fontFamily="@font/montserrat_light"
+                android:text="@string/brand"
+                android:textSize="@dimen/textSizeExtraSmall"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materialDivider" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/filter_brand_searchbar"
+                style="@style/Theme.SearchBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_24sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:imeOptions="actionSearch"
+                app:layout_constraintTop_toBottomOf="@+id/filter_brand_text"
+                tools:layout_editor_absoluteX="31dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/filter_brand_recyclerview"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_100sdp"
+                app:layout_constraintEnd_toEndOf="@+id/filter_brand_searchbar"
+                app:layout_constraintStart_toStartOf="@+id/filter_brand_searchbar"
+                app:layout_constraintTop_toBottomOf="@+id/filter_brand_searchbar" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/materialDivider2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/filter_brand_recyclerview" />
+
+            <TextView
+                android:id="@+id/filter_model_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:fontFamily="@font/montserrat_light"
+                android:text="@string/model"
+                android:textSize="@dimen/textSizeExtraSmall"
+                app:layout_constraintStart_toStartOf="@+id/filter_brand_text"
+                app:layout_constraintTop_toBottomOf="@+id/materialDivider2" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/filter_model_searchbar"
+                style="@style/Theme.SearchBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_24sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:imeOptions="actionSearch"
+                app:layout_constraintTop_toBottomOf="@+id/filter_model_text"
+                tools:layout_editor_absoluteX="31dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/filter_model_recyclerview"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_100sdp"
+                app:layout_constraintEnd_toEndOf="@+id/filter_model_searchbar"
+                app:layout_constraintStart_toStartOf="@+id/filter_model_searchbar"
+                app:layout_constraintTop_toBottomOf="@+id/filter_model_searchbar" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/filter_primary_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:background="@drawable/main_button_background"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/primary"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/textSizeExtraSmall"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nestedScrollView" />
+</androidx.constraintlayout.widget.ConstraintLayout>

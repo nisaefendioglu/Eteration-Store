@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_home">
+    <navigation android:id="@+id/navigation_home" app:startDestination="@id/navigation_home_fragment">
+        <fragment
+            android:id="@+id/navigation_home_fragment"
+            android:name="com.nisaefendioglu.eterationstore.presentation.home.HomeFragment"
+            android:label="fragment_home"
+            tools:layout="@layout/fragment_home" >
+            <action
+                android:id="@+id/action_navigation_home_fragment_to_detailFragment"
+                app:destination="@id/detailFragment" />
+        </fragment>
+
+        <fragment
+            android:id="@+id/detailFragment"
+            android:name="com.nisaefendioglu.eterationstore.presentation.detail.DetailFragment"
+            android:label="fragment_detail"
+            tools:layout="@layout/fragment_detail" >
+
+            <argument
+                android:name="product"
+                app:argType="com.nisaefendioglu.eterationstore.domain.models.Product" />
+        </fragment>
+    </navigation>
+
+    <fragment
+        android:id="@+id/navigation_cart"
+        android:name="com.nisaefendioglu.eterationstore.presentation.cart.CartFragment"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" />
+    <fragment
+        android:id="@+id/navigation_favorites"
+        android:name="com.nisaefendioglu.eterationstore.presentation.favorites.FavoritesFragment"
+        android:label="fragment_favorites"
+        tools:layout="@layout/fragment_favorites" />
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.nisaefendioglu.eterationstore.presentation.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+
+
+
+</navigation>

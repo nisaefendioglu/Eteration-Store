@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".presentation.home.HomeFragment">
+
+ <com.google.android.material.appbar.MaterialToolbar
+     android:id="@+id/homeToolbar"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:background="?attr/colorPrimary"
+     app:layout_constraintEnd_toEndOf="parent"
+     app:layout_constraintStart_toStartOf="parent"
+     app:layout_constraintTop_toTopOf="parent"
+     app:title="@string/app_name"
+     app:titleTextAppearance="@style/Theme.Toolbar.BigTitle" />
+
+ <androidx.appcompat.widget.AppCompatEditText
+     android:id="@+id/homeSearchbar"
+     style="@style/Theme.SearchBar"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_marginStart="@dimen/_16sdp"
+     android:layout_marginTop="@dimen/_14sdp"
+     android:layout_marginEnd="@dimen/_16sdp"
+     android:imeOptions="actionSearch"
+     android:inputType="textCapSentences"
+     android:visibility="gone"
+     app:layout_constraintEnd_toEndOf="parent"
+     app:layout_constraintHorizontal_bias="0.5"
+     app:layout_constraintStart_toStartOf="parent"
+     app:layout_constraintTop_toBottomOf="@+id/homeToolbar" />
+
+
+ <TextView
+     android:id="@+id/homeFiltersText"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:fontFamily="@font/montserrat_bold"
+     android:text="@string/filters"
+     android:textSize="@dimen/textSizeMedium"
+     android:visibility="gone"
+     app:layout_constraintBottom_toBottomOf="@+id/homeSelectFilterText"
+     app:layout_constraintStart_toStartOf="@+id/homeSearchbar"
+     app:layout_constraintTop_toTopOf="@+id/homeSelectFilterText" />
+
+ <TextView
+     android:id="@+id/homeSelectFilterText"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_marginTop="@dimen/_10sdp"
+     android:background="@color/mainGrey"
+     android:fontFamily="@font/montserrat_light"
+     android:paddingHorizontal="@dimen/_8sdp"
+     android:paddingVertical="@dimen/_4sdp"
+     android:text="@string/select_filter"
+     android:textSize="@dimen/textSizeSmall"
+     android:visibility="gone"
+     app:layout_constraintEnd_toEndOf="@+id/homeSearchbar"
+     app:layout_constraintTop_toBottomOf="@+id/homeSearchbar" />
+
+ <androidx.recyclerview.widget.RecyclerView
+     android:id="@+id/homeRecyclerview"
+     android:layout_width="match_parent"
+     android:layout_height="0dp"
+     android:visibility="visible"
+     app:layout_constraintBottom_toBottomOf="parent"
+     app:layout_constraintEnd_toEndOf="parent"
+     app:layout_constraintHorizontal_bias="0.5"
+     app:layout_constraintStart_toStartOf="parent"
+     app:layout_constraintTop_toBottomOf="@+id/homeSelectFilterText" />
+
+ <ProgressBar
+     android:id="@+id/home_progress"
+     style="?android:attr/progressBarStyle"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:visibility="gone"
+     app:layout_constraintBottom_toBottomOf="parent"
+     app:layout_constraintEnd_toEndOf="parent"
+     app:layout_constraintHorizontal_bias="0.5"
+     app:layout_constraintStart_toStartOf="parent"
+     app:layout_constraintTop_toTopOf="parent"
+     app:layout_constraintVertical_bias="0.5" />
+
+ <Button
+     android:id="@+id/home_try_again_button"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:text="@string/try_again"
+     android:visibility="gone"
+     app:layout_constraintBottom_toBottomOf="@+id/homeRecyclerview"
+     app:layout_constraintEnd_toEndOf="parent"
+     app:layout_constraintStart_toStartOf="parent"
+     app:layout_constraintTop_toBottomOf="@+id/homeToolbar" />
+</androidx.constraintlayout.widget.ConstraintLayout>
